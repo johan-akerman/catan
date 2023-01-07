@@ -8,8 +8,7 @@ import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <div className="bg-gray-100 h-screen">
-    <Header />
+  <div className="bg-blue-500 h-screen">
     <Board />
     <Footer />
   </div>

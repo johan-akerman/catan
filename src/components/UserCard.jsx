@@ -1,19 +1,35 @@
+import {
+  faCoins,
+  faPeopleGroup,
+  faRoad,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function UserCard() {
   return (
-    <div className="bg-gray-200 rounded-md p-3 grid grid-cols-2 h-20">
-      <div className="bg-green-200 rounded-full h-14 w-14"></div>
-      <div>
-        <h1 className="font-semibold">Username</h1>
-        <div className="grid grid-cols-3 pt-2 text-sm">
-          <div>
-            <h3>X: 1</h3>
-          </div>
-          <div>
-            <h3>Y: 2</h3>
-          </div>
-          <div>
-            <h3>Z: 3</h3>
-          </div>
+    <div className="bg-white p-3 h-20 border-b-2 last:border-none">
+      <h1 className="font-bold text-lg">Username</h1>
+      <div className="grid grid-cols-5 pt-2 text-sm">
+        <div className="flex">
+          <FontAwesomeIcon icon={faCoins} className="mr-2 mt-1" />
+          <span>1</span>
+        </div>
+        <div className="flex">
+          <FontAwesomeIcon icon={faPeopleGroup} className="mr-2 mt-1" />
+          <span>1</span>
+        </div>
+        <div className="flex">
+          <FontAwesomeIcon icon={faRoad} className="mr-2 mt-1" />
+          <span>1</span>
+        </div>
+
+        <div className="flex">
+          <FontAwesomeIcon icon={faRoad} className="mr-2 mt-1" />
+          <span>1</span>
+        </div>
+        <div className="flex">
+          <FontAwesomeIcon icon={faRoad} className="mr-2 mt-1" />
+          <span>1</span>
         </div>
       </div>
     </div>
