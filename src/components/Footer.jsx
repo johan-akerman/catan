@@ -62,7 +62,7 @@ export default function Footer() {
 
         <div className="col-span-5  gap-12 bg-white shadow-2xl rounded-t-md relative">
           <p className="py-3 text-xl text-center">
-            <strong>Username</strong> is placing settlement...
+            <strong>Username's </strong> turn...
           </p>
 
           <div className="grid grid-cols-4">
