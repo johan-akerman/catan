@@ -8,6 +8,8 @@ export default function Board() {
   let startY = 50;
   let size = 35;
 
+  let nodes = [];
+
   let rows = [
     { n: 3, offset: 2 * size },
     { n: 4, offset: size },
@@ -91,6 +93,16 @@ export default function Board() {
     ctx.stroke();
   }
 
+  function drawRoad(ctx, start, end) {
+    ctx.beginPath();
+    console.log(nodes);
+    ctx.moveTo(start.hexX, start.hexY);
+    ctx.lineTo(end.hexX, end.hexY);
+    ctx.strokeStyle = "#FF0000";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+  }
+
   function drawCircles(ctx, x, y, j) {
     let i = 0;
     let max = 6;
@@ -109,6 +121,8 @@ export default function Board() {
       var angle_rad = (Math.PI / 180) * angle_deg;
       var hexX = x + (size + 5) * Math.cos(angle_rad);
       var hexY = y + (size + 5) * Math.sin(angle_rad);
+
+      nodes.push({ hexX, hexY });
       ctx.moveTo(hexX, hexY);
       ctx.beginPath();
       ctx.arc(hexX, hexY, 8, 0, 2 * Math.PI);
@@ -158,6 +172,10 @@ export default function Board() {
       currentY += (5 / 3) * size;
       i++;
     });
+
+    for (var n = 0; n < nodes.length - 1; n++) {
+      drawRoad(ctx, nodes[n], nodes[n + 1]);
+    }
   }, []);
 
   return (
